@@ -1,5 +1,4 @@
-﻿using GeneticAlgorithm.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +9,16 @@ namespace GeneticAlgorithm
     {
         long iterationCounter;
 
-        protected List<Node> Society { get; }
+        protected Array Society { get; }
 
-        public GAClient(List<Node> society)
+        public GAClient(Array society)
         {
             this.Society = society;
         }
 
-        public Task<List<Node>> OutputAsync() => new Task<List<Node>>(() => Output());
+        public Task<Array> OutputAsync() => new Task<Array>(() => Output());
 
-        public List<Node> Output()
+        public Array Output()
         {
             /*
              * Gbest, which represents the solution with maximum influence spread.
@@ -155,17 +154,17 @@ namespace GeneticAlgorithm
              */
         }
 
-        protected virtual List<Node> InitializeMutation()
+        protected virtual Array InitializeMutation()
         {
-            return new List<Node>();
+            throw new NotImplementedException();
         }
 
-        protected virtual List<Node> InitializeCrossover()
+        protected virtual Array InitializeCrossover()
         {
-            return new List<Node>();
+            throw new NotImplementedException();
         }
 
-        protected virtual void LocalSearch(List<Node> nodes)
+        protected virtual void LocalSearch(Array nodes)
         {
             /*
              * 1: Input: node set S. 
