@@ -16,8 +16,6 @@ namespace GeneticAlgorithm
             this.Society = society;
         }
 
-        public Task<Array> OutputAsync() => new Task<Array>(() => Output());
-
         public Array Output()
         {
             /*
