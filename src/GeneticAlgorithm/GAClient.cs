@@ -9,14 +9,14 @@ namespace GeneticAlgorithm
     {
         long iterationCounter;
 
-        protected Array Society { get; }
+        protected List<Array> Society { get; }
 
-        public GAClient(Array society)
+        public GAClient(List<Array> society)
         {
             this.Society = society;
         }
 
-        public Array Output()
+        public List<Array> Output()
         {
             /*
              * Gbest, which represents the solution with maximum influence spread.
@@ -152,17 +152,17 @@ namespace GeneticAlgorithm
              */
         }
 
-        protected virtual Array InitializeMutation()
+        protected virtual List<Array> InitializeMutation()
         {
             throw new NotImplementedException();
         }
 
-        protected virtual Array InitializeCrossover()
+        protected virtual List<Array> InitializeCrossover()
         {
             throw new NotImplementedException();
         }
 
-        protected virtual void LocalSearch(Array nodes)
+        protected virtual void LocalSearch(List<Array> nodes)
         {
             /*
              * 1: Input: node set S. 
